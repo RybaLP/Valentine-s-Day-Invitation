@@ -29,14 +29,16 @@ function App() {
           </div>
         )}
 
-        {display && (
-          <div className="mt-5 flex flex-col justify-center gap-5 sm:gap-10 w-15 max-w-md">
-             <AgreeButton onAgree={Agreement} />
-             <div className='absolute'>
-              <DisagreeeButton/>
-             </div>
-          </div>
-        )}
+{display && (
+  <div className='flex w-[300px] h-[100px] mt-5 ml-12 justify-center'> {/* Zmiana na flex */}
+    <div className='w-[70px] h-[100px] flex justify-center items-center'>
+      <AgreeButton onAgree={Agreement} />
+    </div>
+    <div className='w-[150px] h-[100px] flex justify-center items-center'> {/* Usunięcie relative */}
+      <DisagreeeButton />
+    </div>
+  </div>
+)}
       </div>
     </>
   )

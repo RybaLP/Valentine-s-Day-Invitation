@@ -3,8 +3,8 @@ import React, { useState } from 'react'
 const DisagreeeButton = () => {
 
     const [positionRight, setPositionRight] = useState(0);
-    const [positionLeft, setPositionLeft]  = useState(120);
-    const [positionBot, setPositionBot] = useState(60);
+    const [positionLeft, setPositionLeft]  = useState(0);
+    const [positionBot, setPositionBot] = useState(0);
     const [positionTop, setPositionTop] = useState(0);
 
     const GeneratreRandomNumber = () : number => {
@@ -20,11 +20,19 @@ const DisagreeeButton = () => {
     }
 
 
-  return (
-    <div className={`p-2 bg-red-600 rounded-3xl cursor-pointer absolute w-15 h-15 flex justify-center items-center transition-all duration-200 ml-27`}
-    style={{top: `${positionTop}px`, left: `${positionLeft}px`, right: `${positionRight}px`, bottom : `${positionBot}px`}}
-    onMouseEnter={RandomPosition} onClick={RandomPosition}>No!</div>
-  )
+    return (
+      <div 
+        className={`px-5 py-2 bg-red-600 text-white cursor-pointer rounded-full flex justify-center items-center transition-all duration-200`}
+        style={{ 
+          position: 'relative', // Dodanie position relative
+          transform: `translate(${positionLeft}px, ${positionTop}px)` // Zmiana na transform
+        }}
+        onMouseEnter={RandomPosition} 
+        onClick={RandomPosition}
+      >
+        No!
+      </div>
+    );
 }
 
 export default DisagreeeButton;
