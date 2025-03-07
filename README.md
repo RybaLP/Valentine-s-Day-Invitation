@@ -14,7 +14,7 @@ This is a very simple interactive app where users can make a choice:
 To get this project running on your local machine, follow these easy steps:
 
 ```bash
-git clone https://github.com/your-username/valentines-app.git
+git clone https://github.com/RybaLP/Valentine-s-Day-Invitation.git
 cd valentines-app
 npm install
 npm run dev
